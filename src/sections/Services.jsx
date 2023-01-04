@@ -9,6 +9,7 @@ import petFood3 from "../assets/pet food - 3.jpeg";
 import petAccessories3 from "../assets/pet accessories - 3.jpeg";
 import petAccessories2 from "../assets/pet accessories - 2.jpg";
 import petAccessories1 from "../assets/pet accessories - 1.jpg";
+import useScreenState from "../hooks/useScreenState";
 
 const services = [
   {
@@ -32,15 +33,20 @@ const services = [
 ];
 
 const Services = () => {
-  const [currentServiceOnHover, setCurrentServiceOnHover] = useState(null);
+  const { screenWidth } = useScreenState();
+  // screenWidth > 480 &&
+
+  const [currentServiceOnHover, setCurrentServiceOnHover] = useState("");
 
   return (
     <div
-      className="h-screen w-full lg:px-20 md:px-10 px-4 min-h-[92vh] flex flex-col justify-center space-y-4"
+      className="md:h-screen min-h-screen w-full lg:px-20 md:px-10 px-4 md:min-h-[92vh] flex flex-col justify-center space-y-4"
       id="services"
     >
-      <div className="lg:space-y-3 lg:w-2/5 md:w-1/2">
-        <p className="lg:text-6xl md:text-4xl font-black font-header">Treat your pet </p>
+      <div className="lg:space-y-3 md:w-1/2">
+        <p className="lg:text-6xl md:text-4xl font-black font-header">
+          Treat your pet{" "}
+        </p>
 
         <p className="lg:text-xl  font-description font-extralight">
           To something wonderful today
@@ -48,23 +54,21 @@ const Services = () => {
       </div>
 
       <div
-        className={`w-full p-4 gap-8 h-max overflow-hidden ${
-          currentServiceOnHover && currentServiceOnHover !== null
+        className={`w-full p-4 lg:gap-8 gap-3 h-max overflow-hidden ${
+          screenWidth > 480 &&
+          currentServiceOnHover &&
+          currentServiceOnHover !== null
             ? "flex"
-            : "grid grid-cols-3"
+            : "md:grid md:grid-cols-3 flex flex-col"
         }`}
       >
         {services.map((serviceDetail, index) => (
-          <div key={index}>
-            {currentServiceOnHover !== null &&
-            currentServiceOnHover !== serviceDetail.title ? null : (
-              <ServicesCard
-                serviceDetail={serviceDetail}
-                currentServiceOnHover={currentServiceOnHover}
-                setCurrentServiceOnHover={setCurrentServiceOnHover}
-              />
-            )}
-          </div>
+          <ServicesCard
+            key={index}
+            serviceDetail={serviceDetail}
+            currentServiceOnHover={currentServiceOnHover}
+            setCurrentServiceOnHover={setCurrentServiceOnHover}
+          />
         ))}
       </div>
     </div>

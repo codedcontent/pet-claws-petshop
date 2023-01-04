@@ -19,6 +19,10 @@ const navLinks = [
     path: "#services",
   },
   {
+    title: "Testimonials",
+    path: "#testimonials",
+  },
+  {
     title: "Contact Us",
     path: "#contact-us",
   },
@@ -40,7 +44,7 @@ const CustomAppBar = () => {
         />
 
         {/* Nav Links - Large Screens */}
-        <div className="lg:gap-10 md:gap-6 md:flex hidden justify-center items-center">
+        <div className="lg:gap-8 md:gap-6 md:flex hidden justify-center items-center">
           {navLinks.map((link, index) => (
             <a
               key={index}

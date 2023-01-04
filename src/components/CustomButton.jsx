@@ -1,7 +1,7 @@
 import React from "react";
 
 const CustomButton = ({ title, variant }) => {
-  const commonStyles = `font-description font-extralight lg:px-6 lg:py-3 md:px-4 md:py-1.5 md:text-sm flex justify-center items-center text-cente py-1 px-2 cursor-pointer`;
+  const commonStyles = `font-description font-extralight lg:px-6 lg:py-3 md:px-4 md:py-1.5 py-3 px-6 md:text-sm flex justify-center items-center text-cente py-1 px-2 cursor-pointer`;
 
   if (variant === "outlined") {
     return (

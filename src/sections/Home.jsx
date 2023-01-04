@@ -8,12 +8,14 @@ const Home = () => {
       className="lg:px-20 md:px-10 px-4 min-h-[92vh] flex flex-col justify-center"
       id="#"
     >
-      <div className="w-1/2 space-y-10">
+      <div className="md:w-1/2 w-full space-y-10">
         {/* Into text */}
         <div className="space-y-4">
-          <p className="text-7xl font-black font-header">Paws & Claws Petshop</p>
+          <p className="md:text-7xl text-5xl font-black font-header">
+            Paws & Claws Petshop
+          </p>
 
-          <p className="text-2xl font-description font-extralight">
+          <p className="md:text-2xl text-xl font-description font-extralight">
             Give your precious pet the best product.
           </p>
         </div>
@@ -25,7 +27,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-1/2 h-screen absolute top-0 right-0 -z-10 overflow-hidden">
+      <div className="md:w-1/2 w-full h-screen absolute top-0 right-0 -z-10 overflow-hidden">
         <img src={heroImg} alt="" className="w-full h-full object-cover" />
       </div>
     </div>

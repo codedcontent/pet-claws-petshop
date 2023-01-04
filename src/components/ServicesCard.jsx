@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
+import useScreenState from "../hooks/useScreenState";
 
 const ServicesCard = ({
   serviceDetail,
   currentServiceOnHover,
   setCurrentServiceOnHover,
 }) => {
+  const { screenWidth } = useScreenState();
+
   const handleHover = () => {
     setCurrentServiceOnHover(serviceDetail.title);
   };
@@ -13,22 +16,22 @@ const ServicesCard = ({
     setCurrentServiceOnHover(null);
   };
 
-  //   useEffect(() => {
-  //     const hoverTimeout = setTimeout(() => {
-  //       setCurrentServiceOnHover(null);
-  //     }, 3000);
+  useEffect(() => {
+    const hoverTimeout = setTimeout(() => {
+      setCurrentServiceOnHover(null);
+    }, 3000);
 
-  //     return () => clearTimeout(hoverTimeout);
-  //   }, [currentServiceOnHover]);
+    return () => clearTimeout(hoverTimeout);
+  }, [currentServiceOnHover]);
 
   return (
     <div
       className={`w-full shadow-lg rounded-lg lg:max-h-[500px] cursor-pointer ${
-        currentServiceOnHover !== null &&
-        currentServiceOnHover !== serviceDetail.title
-          ? "shrink-cards-away"
-          : currentServiceOnHover === null
+        !currentServiceOnHover || screenWidth <= 480
           ? ""
+          : currentServiceOnHover !== serviceDetail.title
+          ? // hidden
+            `shrink-cards-away`
           : "flex flex-row-reverse justify-center items-center"
       }`}
       onClick={handleHover}
@@ -36,16 +39,16 @@ const ServicesCard = ({
     >
       {/* Service Images */}
       <div className="flex w-full">
-        {currentServiceOnHover !== serviceDetail.title ? (
+        {currentServiceOnHover !== serviceDetail.title || screenWidth <= 480 ? (
           // User has not hovered on the card - Don't expand it.
           <img
             src={serviceDetail.servicesImages[0]}
             alt={serviceDetail.title}
-            className="w-full lg:h-64 md:h-40 rounded-t-lg object-cover"
+            className="w-full lg:h-64 h-40 rounded-t-lg object-cover"
           />
         ) : (
           // User has hovered on the card - Expand it.
-          <div className="grid grid-cols-4 w-full gap-10 h-full place-items-center">
+          <div className="md:grid md:grid-cols-4 w-full lg:gap-10 md:gap-2 h-full place-items-center">
             {/* Expanded text */}
             <div className="p-4 space-y-1">
               <p className="font-header lg:text-xl text-sm font-bold text-secondary capitalize">
@@ -63,7 +66,7 @@ const ServicesCard = ({
                 key={index}
                 src={serviceImg}
                 alt={serviceImg}
-                className={`h-[500px] rounded-t-lg object-cover`}
+                className={`lg:h-[500px] md:h-full hidden md:block rounded-t-lg object-cover`}
               />
             ))}
           </div>
@@ -71,17 +74,18 @@ const ServicesCard = ({
       </div>
 
       {/* Service Description */}
-      {!currentServiceOnHover && (
-        <div className="p-4 space-y-1">
-          <p className="font-header lg:text-xl text-sm font-bold text-secondary capitalize">
-            {serviceDetail.title}
-          </p>
+      {!currentServiceOnHover ||
+        (screenWidth <= 480 && (
+          <div className="p-4 space-y-1">
+            <p className="font-header lg:text-xl text-sm font-bold text-secondary capitalize">
+              {serviceDetail.title}
+            </p>
 
-          <p className="font-description font-extralight lg:text-sm text-xs">
-            {serviceDetail.description}
-          </p>
-        </div>
-      )}
+            <p className="font-description font-extralight lg:text-sm text-xs">
+              {serviceDetail.description}
+            </p>
+          </div>
+        ))}
     </div>
   );
 };
