@@ -9,7 +9,7 @@ const ContactUs = () => {
     {
       title: "Chat with us",
       description: "Contact us via email",
-      method: "pawandclawpetshop.abuja@gmail.com",
+      method: "pawsandclawspetshop.abuja@gmail.com",
       icon: (
         <MarkEmailUnreadIcon className="text-secondary" sx={{ fontSize: 35 }} />
       ),

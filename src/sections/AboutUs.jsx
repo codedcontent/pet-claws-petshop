@@ -29,7 +29,11 @@ const AboutUs = () => {
             for your needs.
           </p>
 
-          <CustomButton title={"Make an enquiry"} />
+          <div>
+            <a href="#contact-us">
+              <CustomButton title={"Make an enquiry"} />
+            </a>
+          </div>
         </div>
 
         <img src={pawLogo} alt="paw logo" className="md:w-96 w-52" />
