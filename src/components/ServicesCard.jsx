@@ -13,12 +13,12 @@ const ServicesCard = ({
   };
 
   const handleHoverAway = () => {
-    setCurrentServiceOnHover(null);
+    setCurrentServiceOnHover("");
   };
 
   useEffect(() => {
     const hoverTimeout = setTimeout(() => {
-      setCurrentServiceOnHover(null);
+      setCurrentServiceOnHover("");
     }, 3000);
 
     return () => clearTimeout(hoverTimeout);
@@ -31,7 +31,7 @@ const ServicesCard = ({
           ? ""
           : currentServiceOnHover !== serviceDetail.title
           ? // hidden
-            `shrink-cards-away`
+            `shrink-cards-away hidden`
           : "flex flex-row-reverse justify-center items-center"
       }`}
       onClick={handleHover}
@@ -74,8 +74,8 @@ const ServicesCard = ({
       </div>
 
       {/* Service Description */}
-      {!currentServiceOnHover ||
-        (screenWidth <= 480 && (
+      <>
+        {screenWidth <= 480 ? (
           <div className="p-4 space-y-1">
             <p className="font-header lg:text-xl text-sm font-bold text-secondary capitalize">
               {serviceDetail.title}
@@ -85,7 +85,22 @@ const ServicesCard = ({
               {serviceDetail.description}
             </p>
           </div>
-        ))}
+        ) : (
+          <>
+            {!currentServiceOnHover && (
+              <div className="p-4 space-y-1">
+                <p className="font-header lg:text-xl text-sm font-bold text-secondary capitalize">
+                  {serviceDetail.title}
+                </p>
+
+                <p className="font-description font-extralight lg:text-sm text-xs">
+                  {serviceDetail.description}
+                </p>
+              </div>
+            )}
+          </>
+        )}
+      </>
     </div>
   );
 };

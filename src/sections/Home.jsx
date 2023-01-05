@@ -15,7 +15,7 @@ const Home = () => {
             Paws & Claws Petshop
           </p>
 
-          <p className="md:text-2xl text-xl font-description font-extralight">
+          <p className="md:text-2xl text-xl font-description md:font-extralight font-semibold">
             Give your precious pet the best product.
           </p>
         </div>

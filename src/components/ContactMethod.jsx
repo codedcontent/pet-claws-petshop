@@ -5,16 +5,16 @@ const ContactMethod = ({ contactMethod }) => {
     <div className="flex items-start justify-start w-full gap-3">
       {contactMethod.icon}
 
-      <div className="space-y-1">
-        <p className="font-header font-bold capitalize">
+      <div className="space-y-1 break-words">
+        <p className="font-header text-sm md:text-base  font-bold capitalize">
           {contactMethod.title}
         </p>
 
-        <p className="font-description font-extralight text-gray-400 ">
+        <p className="font-description text-sm md:text-base  font-extralight text-gray-400 ">
           {contactMethod.description}
         </p>
 
-        <p className="font-header font-extralight text-secondary ">
+        <p className="font-header text-sm md:text-base  font-extralight text-secondary ">
           {contactMethod.method}
         </p>
       </div>

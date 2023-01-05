@@ -29,12 +29,12 @@ const navLinks = [
 ];
 
 const CustomAppBar = () => {
-  const [currentSection, setCurrentSection] = useState("#");
+  const [currentSection] = useState("#");
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="w-full z-50 sticky top-0 left-0">
-      <div className="w-full  h-14 flex justify-between items-center m-auto lg:px-20 md:px-10 p-4">
+    <div className="w-full z-50 sticky top-0 left-0 bg-white/20">
+      <div className="w-full h-14 flex justify-between items-center m-auto lg:px-20 md:px-10 p-4">
         {/* Logo */}
         <img
           src={appLogo}
@@ -59,9 +59,9 @@ const CustomAppBar = () => {
         </div>
 
         {/* Get in touch button */}
-        <div className="hidden md:block">
+        <a href="#contact-us" className="hidden md:block">
           <CustomButton title={"Get in touch"} variant="outlined" />
-        </div>
+        </a>
 
         {/* Menu Icon */}
         <div className="md:hidden">
@@ -106,9 +106,13 @@ const CustomAppBar = () => {
                 </div>
 
                 {/* Get in touch button */}
-                <div className="w-max">
+                <a
+                  href="#contact-us"
+                  className="w-max"
+                  onClick={() => setNavOpen(false)}
+                >
                   <CustomButton title={"Get in touch"} variant="outlined" />
-                </div>
+                </a>
               </div>
             </div>
           </Modal>

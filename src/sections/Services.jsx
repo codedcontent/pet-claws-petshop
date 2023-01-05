@@ -54,7 +54,7 @@ const Services = () => {
       </div>
 
       <div
-        className={`w-full p-4 lg:gap-8 gap-3 h-max overflow-hidden ${
+        className={`w-full md:p-4 p-0 lg:gap-8 gap-3 h-max overflow-hidden ${
           screenWidth > 480 &&
           currentServiceOnHover &&
           currentServiceOnHover !== null

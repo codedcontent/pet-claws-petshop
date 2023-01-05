@@ -105,9 +105,9 @@ const Testimonials = () => {
         ))}
       </div>
 
-      <div className="w-max md:mt-10 mt-3">
+      <a href="#contact-us" className="w-max md:mt-10 mt-3">
         <CustomButton title={"Be a part of the experience"} />
-      </div>
+      </a>
     </div>
   );
 };

@@ -18,8 +18,8 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="flex md:flex-row flex-col-reverse justify-between w-full items-center">
-        <div className="space-y-10 md:w-1/2 mt-10">
+      <div className="flex md:flex-row flex-col-reverse justify-between w-full items-center gap-0">
+        <div className="md:space-y-10 space-y-4 md:w-1/2 mt-10">
           <p className="lg:text-xl md:px-0 px-4 font-description font-extralight">
             Paws & Claws Petshop is a store that sells supplies and equipment
             for pet care, such as food, toys, leashes, collars, cages, tanks,

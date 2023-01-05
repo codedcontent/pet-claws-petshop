@@ -42,7 +42,7 @@ const ContactUs = () => {
       id="contact-us"
     >
       <div className="lg:space-y-3">
-        <p className="lg:text-6xl md:text-4xl font-black font-header">
+        <p className="lg:text-6xl md:text-4xl text-3xl font-black font-header">
           Contact Us
         </p>
 
@@ -51,7 +51,7 @@ const ContactUs = () => {
         </p>
       </div>
 
-      <div className="space-y-6 mt-6 w-1/2 ">
+      <div className="space-y-6 mt-6 md:w-1/2 w-full ">
         {contactMethods.map((contactMethod, index) => (
           <ContactMethod key={index} contactMethod={contactMethod} />
         ))}
