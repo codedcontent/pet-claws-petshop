@@ -44,7 +44,7 @@ const Services = () => {
       id="services"
     >
       <div className="lg:space-y-3 md:w-1/2">
-        <p className="lg:text-6xl md:text-4xl font-black font-header">
+        <p className="lg:text-6xl md:text-4xl text-3xl font-black font-header">
           Treat your pet{" "}
         </p>
 

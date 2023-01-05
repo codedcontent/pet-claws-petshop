@@ -18,7 +18,7 @@
 }
 
 .slide-in {
-    animation: slide-in-effect 1.5s ease-in-out forwards;
+    animation: slide-in-effect 1s ease-in-out forwards;
 }
 
 @keyframes shrink-cards-away-effect {

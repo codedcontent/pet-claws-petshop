@@ -41,7 +41,7 @@ const Testimonials = () => {
       } else {
         setCurrentTestimonial((prev) => (prev += 1));
       }
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(testimonialInterval);
   }, [currentTestimonial]);
@@ -52,11 +52,11 @@ const Testimonials = () => {
       id="testimonials"
     >
       <div className="lg:space-y-3">
-        <p className="lg:text-6xl md:text-4xl font-black font-header">
+        <p className="lg:text-6xl md:text-4xl text-3xl font-black font-header">
           Testimonials
         </p>
 
-        <p className="lg:text-xl  font-description font-extralight">
+        <p className="lg:text-xl font-description font-extralight">
           See what people are saying about us
         </p>
       </div>
@@ -65,10 +65,10 @@ const Testimonials = () => {
         <div key={index} className="w-full">
           {currentTestimonial === index && (
             <div
-              className="space-y-10 w-full mt-10 flex items-center justify-between"
+              className="md:space-y-10 md:gap-0 gap-4 w-full md:mt-10 mt-4 flex md:flex-row flex-col-reverse items-center justify-between"
               key={index}
             >
-              <div className="block w-1/2 border-2 border-secondary p-6 relative slide-in">
+              <div className="flex md:w-1/2 w-full border-2 border-secondary p-6 relative slide-in">
                 {/* Left-Quote */}
                 <FormatQuoteIcon className="absolute top-0 left-0 rotate-180" />
 
@@ -83,7 +83,7 @@ const Testimonials = () => {
               <img
                 src={testimonials.profilePic}
                 alt="paw logo"
-                className="w-72 h-72 rounded-full slide-in border-2 border-secondary"
+                className="md:w-72 md:h-72 h-40 w-40 rounded-full slide-in border-2 border-secondary"
               />
             </div>
           )}
@@ -91,7 +91,7 @@ const Testimonials = () => {
       ))}
 
       {/* Testimonial count indicator */}
-      <div className="flex gap-4 w-full mt-4 place-content-center">
+      <div className="flex md:gap-4 gap-2 w-full md:mt-4 mt-2 place-content-center">
         {usersTestimonials.map((_, index) => (
           <div
             key={index}
@@ -105,7 +105,7 @@ const Testimonials = () => {
         ))}
       </div>
 
-      <div className="w-max mt-10">
+      <div className="w-max md:mt-10 mt-3">
         <CustomButton title={"Be a part of the experience"} />
       </div>
     </div>

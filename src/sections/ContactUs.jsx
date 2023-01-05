@@ -11,7 +11,7 @@ const ContactUs = () => {
       description: "Contact us via email",
       method: "pawandclawpetshop.abuja@gmail.com",
       icon: (
-        <MarkEmailUnreadIcon className="text-secondary" sx={{ fontSize: 50 }} />
+        <MarkEmailUnreadIcon className="text-secondary" sx={{ fontSize: 35 }} />
       ),
     },
     {
@@ -19,7 +19,7 @@ const ContactUs = () => {
       description: "8am - 9am, Everyday",
       method: "08063732630",
       icon: (
-        <PhoneInTalkIcon className="text-secondary" sx={{ fontSize: 50 }} />
+        <PhoneInTalkIcon className="text-secondary" sx={{ fontSize: 35 }} />
       ),
     },
     {
@@ -30,7 +30,7 @@ const ContactUs = () => {
       icon: (
         <LocalConvenienceStoreIcon
           className="text-secondary"
-          sx={{ fontSize: 50 }}
+          sx={{ fontSize: 35 }}
         />
       ),
     },

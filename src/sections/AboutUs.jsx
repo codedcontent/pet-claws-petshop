@@ -9,18 +9,18 @@ const AboutUs = () => {
       id="about-us"
     >
       <div className="lg:space-y-3">
-        <p className="lg:text-6xl md:text-4xl font-black font-header">
+        <p className="lg:text-6xl md:text-4xl text-3xl font-black font-header">
           Who or What
         </p>
 
-        <p className="lg:text-xl  font-description font-extralight">
+        <p className="lg:text-xl font-description font-extralight">
           Is Paws & Claws Petshop
         </p>
       </div>
 
-      <div className="flex justify-between w-full items-center">
+      <div className="flex md:flex-row flex-col-reverse justify-between w-full items-center">
         <div className="space-y-10 md:w-1/2 mt-10">
-          <p className="lg:text-xl  font-description font-extralight">
+          <p className="lg:text-xl md:px-0 px-4 font-description font-extralight">
             Paws & Claws Petshop is a store that sells supplies and equipment
             for pet care, such as food, toys, leashes, collars, cages, tanks,
             and other necessary items. We also offer services such as wellness
@@ -32,7 +32,7 @@ const AboutUs = () => {
           <CustomButton title={"Make an enquiry"} />
         </div>
 
-        <img src={pawLogo} alt="paw logo" className="w-96" />
+        <img src={pawLogo} alt="paw logo" className="md:w-96 w-52" />
       </div>
     </div>
   );
